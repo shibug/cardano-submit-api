@@ -1,4 +1,2 @@
-# Create docker volume
-
-docker volume create --name=node-ipc
-
+# cardano-submit-api
+Docker Image for Cardano Submit API
