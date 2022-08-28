@@ -2,7 +2,7 @@ FROM debian:stable-slim
 
 LABEL desc="Cardano Submit API Node"
 ARG DEBIAN_FRONTEND=noninteractive
-ARG VERSION=1.34.1
+ARG VERSION=1.35.3
 
 USER root
 WORKDIR /
@@ -15,8 +15,8 @@ ENV \
     PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/guild/.cabal/bin
 
 # COPY NODE BINS AND DEPS
-COPY --from=cardanocommunity/cardano-node:1.34.1 /usr/local/bin/cardano-submit-api /usr/local/bin/
-COPY --from=cardanocommunity/cardano-node:1.34.1 /usr/local/bin/cardano-ping /usr/local/bin/
+COPY --from=cardanocommunity/cardano-node:1.35.3/usr/local/bin/cardano-submit-api /usr/local/bin/
+COPY --from=cardanocommunity/cardano-node:1.35.3 /usr/local/bin/cardano-ping /usr/local/bin/
 
 RUN chmod a+x /usr/local/bin/* && ls /opt/ \
     && mkdir -p /etc/cardano-submit-api
